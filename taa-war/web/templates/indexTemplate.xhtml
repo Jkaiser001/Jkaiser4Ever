@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      contentType="text/html">
+    
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title><ui:insert name="titulo">Toma Asistencia Alumnos</ui:insert></title>
+        </f:facet>
+    </h:head>
+    
+    <body data-tarjet=".bs-docs-sidebarx" data-spy="scroll" data-twttr-rendered="true" style="background-color:black; font-size: 9pt; font-weight: normal; text-align: left; text-decoration: none;"> //url('#{request.contextPath}/resources/img/bg.gif')
+        <div class="span2 text-right" style="background-color:black; margin-bottom: 15px;">
+            <h:graphicImage  alt="Toma Asistencia Alumnos" width="100%" height="120px" url="/resources/img/Header.png"/>
+        </div>
+        <p:overlayPanel id="mainMenu" for=":formBtnsBar:btnPanelContext" rendered="true" style="color: e9f69c">
+            <h:form style="margin-top: 10px; margin-bottom: 10px;">
+                <p:panelGrid columns="1">
+                    <f:facet name="header"><div style="text-align: center; font-size: 11pt; font-family: arial, Helvetica, sans-serif;color: yellowgreen">Menú</div>
+                    </f:facet>
+                    <h:outputLink value="#{request.contextPath}/faces/studentRegister.xhtml"><div style="text-align: left; font-size: 10pt; font-family: arial, Helvetica, sans-serif;">Registrar alumno</div></h:outputLink>
+                    <h:outputLink value="#{request.contextPath}/faces/autenticationStudents.xhtml"><div style="text-align: left; font-size: 10pt; font-family: arial, Helvetica, sans-serif;">Autentificación de alumno</div></h:outputLink>
+                    <h:outputLink value="#{request.contextPath}/faces/attendance.xhtml"><div style="text-align: left; font-size: 10pt; font-family: arial, Helvetica, sans-serif;">Tomar asistencia</div></h:outputLink>
+                </p:panelGrid>
+            </h:form>
+        </p:overlayPanel>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" style="z-index: 1000 !important;">
+            <div class="navbar-inner">
+                <div class="row-fluid special">
+                    <div class="span2">
+                        <h:form id="formBtnsBar" style="margin:0px;">
+                            <p>
+                                <p:outputPanel rendered="true">
+                                    <a class="btnTopMenu">
+                                        <h:commandButton type="button" id="btnPanelContext" value="Desplegar menú principal" title="Clic para desplegar el menú" styleClass="btnTopMenu."/>
+                                    </a>
+                                </p:outputPanel>
+                                <ui:insert name="btnsBar"></ui:insert>
+                            </p>
+                        </h:form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="onBar">
+            <h:form id="formMsj">
+                <p:growl id="myGrowl" showDetail="true" showSummary="false"/>
+            </h:form>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12 text-center" style="min-height: 325px">
+               
+                        <ui:insert name="center"></ui:insert>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 text-center">
+                    <ui:insert name="footerPage">
+                        <div style="text-align: left; font-size: 10pt; font-family: arial, Helvetica, sans-serif; height: 80px; margin-top: 55px;" >
+                            <h:graphicImage  alt="Toma " width="100%" height="60px" url="/resources/img/img06.png"/>                        </div>
+                    </ui:insert>
+                </div>
+            </div>
+        </div> 
+        
+    </body>
+</html>

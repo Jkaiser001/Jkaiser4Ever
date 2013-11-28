@@ -1,6 +1,15 @@
+/taa-war/build/
+/taa-war/dist/
+/taa-war/nbproject/private/
+/taa/build/
+/taa/dist/
+/taa/nbproject/private/
+/taa/taa-ejb/build/
+/taa/taa-ejb/dist/
+/taa/taa-ejb/nbproject/private/
 *.class
-
 # Package Files #
-*.jar
+#*.jar #Descartado para poder subir las bibliotecas
 *.war
 *.ear
+*.properties

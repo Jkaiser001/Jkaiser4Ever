@@ -7,20 +7,19 @@
     xmlns:p="http://primefaces.org/ui">
  
       
-    <f:view contentType="text/html">
+    <body>
 
-        <h:head>
-            <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-            <title>Prueba PhotoCam</title>
-            <style type="text/css">
-                table td {
-                    vertical-align: top;
-                
-                }
-            </style>
-        </h:head>
+        <ui:composition template="./templates/indexTemplate.xhtml">
 
-        <h:body style="background: black">
+            <ui:define name="titulo">
+                Autentificando Alumnos
+            </ui:define>
+            
+            <ui:define name="btnsBar">
+                btnsBar
+            </ui:define>
+            <ui:define name="center">
+        
             <h:form style="background: black">
                 <p:panel style="width: 30%; text-align: center;" header="Foto de asistencia">
                     <h:panelGrid  >
@@ -60,6 +59,8 @@
 
 
             </h:form>
-        </h:body>
-    </f:view>
+         </ui:define>
+      </ui:composition>
+
+    </body>
 </html>

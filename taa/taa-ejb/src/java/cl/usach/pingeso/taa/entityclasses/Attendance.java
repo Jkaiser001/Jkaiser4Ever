@@ -35,7 +35,7 @@ public class Attendance implements Serializable {
     @EmbeddedId
     protected AttendancePK attendancePK;
     @Column(name = "PRESENT")
-    private Boolean present;
+    private String present;
     @JoinColumn(name = "RUT", referencedColumnName = "RUT", insertable = false, updatable = false)
     @ManyToOne(optional = false)
     private Student student;
@@ -59,11 +59,11 @@ public class Attendance implements Serializable {
         this.attendancePK = attendancePK;
     }
 
-    public Boolean getPresent() {
+    public String getPresent() {
         return present;
     }
 
-    public void setPresent(Boolean present) {
+    public void setPresent(String present) {
         this.present = present;
     }
 

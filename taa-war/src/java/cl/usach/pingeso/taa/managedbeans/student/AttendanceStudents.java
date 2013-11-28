@@ -39,7 +39,8 @@ public class AttendanceStudents {
     @PostConstruct
     public void init()
     {
-        attendanceList = attendanceFacade.findAll();
+       attendanceList = attendanceFacade.findAll();
+       System.out.println("tengo"+attendanceList.size());
     }
     
     public AttendanceStudents(){ 

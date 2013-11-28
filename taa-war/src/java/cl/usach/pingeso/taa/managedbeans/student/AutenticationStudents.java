@@ -56,6 +56,7 @@ public class AutenticationStudents {
             outputStream = new FileImageOutputStream(new File(fileFoto));
             // guardamos la imagen
             outputStream.write(datos, 0, datos.length);
+            System.out.println("   llego =X  ");
             
         } catch (IOException e) {
             throw new FacesException("Error guardando la foto.", e);

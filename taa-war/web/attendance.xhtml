@@ -33,10 +33,9 @@
                     <p:dataTable id="students" var="student" rowKey="#{student.attendancePK.rut}" paginator="true" value="#{attendanceStudents.attendanceList}" editable="true" editMode="cell" widgetVar="studentsTable"
                                  rows="10" selection="#{attendanceStudents.selectedUser}" selectionMode="single" filteredValue="#{attendanceStudents.filteredUsers}">
 
-                        <p:ajax event="rowSelect" listener="#{attendanceStudents.onRowSelect}"
-                            update=":form:display :form:growl" oncomplete="PF('studentsTable').show()" />  
-                        <p:ajax event="rowUnselect" listener="#{attendanceStudents.onRowUnselect}" update=":form:growl"/>  
+                        <p:ajax event="rowSelect" update=":form:display " oncomplete="studentDialog.show()" />  
 
+                        .
                         <f:facet name="header">  
                             Lista de asistencia
                         </f:facet>  
@@ -104,7 +103,7 @@
                         <h:panelGrid id="display" columns="2" cellpadding="4">  
 
                             <f:facet name="header">  
-                                <p:graphicImage value="/resources/img/#{attendanceStudents.selectedUser.rut}.jpg"/>
+                               <!-- <p:graphicImage value="/resources/img/{attendanceStudents.selectedUser.rut}.jpg"/>-->
                                 <!--<p:graphicImage value="/resources/img/{attendanceStudents.selectedUser.rut}.jpg"/>-->  
                             </f:facet>  
 

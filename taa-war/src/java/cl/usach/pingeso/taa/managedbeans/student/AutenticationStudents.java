@@ -17,7 +17,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.imageio.stream.FileImageOutputStream;
 import javax.servlet.ServletContext;
-
+/*
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
@@ -25,6 +25,16 @@ import org.opencv.core.Rect;
 import org.opencv.highgui.Highgui;
 
 import org.opencv.objdetect.CascadeClassifier;
+*/
+import com.googlecode.javacv.cpp.opencv_core;
+import com.googlecode.javacv.cpp.opencv_highgui;
+import com.googlecode.javacv.cpp.opencv_objdetect;
+import static com.googlecode.javacv.cpp.opencv_core.*;
+import static com.googlecode.javacv.cpp.opencv_highgui.cvSaveImage;
+import static com.googlecode.javacv.cpp.opencv_imgproc.CV_BGR2GRAY;
+import static com.googlecode.javacv.cpp.opencv_imgproc.cvCvtColor;
+import static com.googlecode.javacv.cpp.opencv_objdetect.cvHaarDetectObjects;
+
 /**
  *
  * @author José Orellana
@@ -36,6 +46,8 @@ public class AutenticationStudents {
     /**
      * Creates a new instance of AutenticationStudents
      */
+    private static final String CASCADE_FILE = 
+    "C:\\opencv\\data\\haarcascades\\haarcascade_frontalface_alt.xml";
     String photo;
     public AutenticationStudents() {
     }
@@ -78,7 +90,15 @@ public class AutenticationStudents {
         System.out.println("PASE");
     }
    private boolean FaceInPicture(){
-        System.out.println("PASE");
+        final ServletContext servletContext = (ServletContext)FacesContext.getCurrentInstance().getExternalContext()
+                .getContext();
+       final String fileFoto = servletContext.getRealPath("")+File.separator+"resources"+File.separator+"img"+File.separator+photo;
+      
+       System.out.println(fileFoto);
+       opencv_objdetect.CvHaarClassifier cascade=new opencv_objdetect.CvHaarClassifier();
+       
+       /* 
+       System.out.println("PASE");
         String path=System.getenv("CLASSPATH");  
         
         System.load("C:\\glassfish3\\jdk7\\lib\\opencv_java247.dll");
@@ -86,7 +106,7 @@ public class AutenticationStudents {
         System.out.println("PASE2");
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         CascadeClassifier faceDetector = new CascadeClassifier("C:\\glassfish3\\jdk7\\lib\\"+"lbpcascade_frontalface.xml");
-        
+       
         
         System.out.println("PASE3");
         MatOfRect faceDetections = new MatOfRect();
@@ -108,7 +128,7 @@ public class AutenticationStudents {
             }
             return true;
           }
-
+*/
         return false;
     }
   
